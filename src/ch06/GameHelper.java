@@ -1,4 +1,4 @@
-package ch05;
+package ch06;
 
 import java.util.ArrayList;
 import java.util.Arrays;
