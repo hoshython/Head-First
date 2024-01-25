@@ -23,5 +23,6 @@ public class AnimalTestDrive {
         Cat cat2 = (Cat) cat1;
         cat2.beFriendly();
         cat2.play();
+        cat2.mew();
     }
 }
