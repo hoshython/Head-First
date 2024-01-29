@@ -14,17 +14,17 @@ public class JukeBox1 {
 //        System.out.println(songList);
         List<SongV3> songList = MockSongs.getSongV3();
 
-        ListPrinter l1 = new ListPrinter("Unsorted", songList);
+        ListPrinter.prettyPrint("Unsorted", songList);
 
         TitleComparator titleComparator = new TitleComparator();
         songList.sort(titleComparator);
-        ListPrinter l2 = new ListPrinter("Sorted by title", songList);
+        ListPrinter.prettyPrint("Sorted by title", songList);
 
         songList.sort(new ArtistComparator());  // same ass Collections.sort(songList, new ArtistCompare());
-        ListPrinter l3 = new ListPrinter("Sorted by artist", songList);
+        ListPrinter.prettyPrint("Sorted by artist", songList);
 
         BpmComparator bpmComparator = new BpmComparator();
         songList.sort(bpmComparator); // same ass Collections.sort(songList, BpmCompare);
-        ListPrinter l4 = new ListPrinter("Sorted by bpm", songList);
+        ListPrinter.prettyPrint("Sorted by bpm", songList);
     }
 }
