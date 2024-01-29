@@ -1,5 +1,6 @@
 package ch11;
 
+import java.util.Collections;
 import java.util.List;
 
 public class JukeBox2 {
@@ -16,5 +17,8 @@ public class JukeBox2 {
 
         songList.sort((o1, o2) -> o1.getArtist().compareTo(o2.getArtist()));
         ListPrinter.prettyPrint("Sorted by artist", songList);
+
+        songList.sort((o1, o2) -> Integer.compare(o1.getBpm(), o2.getBpm()));
+        ListPrinter.prettyPrint("Sorted by bpm", songList);
     }
 }
