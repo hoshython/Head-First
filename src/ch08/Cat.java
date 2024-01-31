@@ -5,13 +5,11 @@ public class Cat extends Animal implements Pet {
         System.out.println("Mew!");
     }
     
-    @Override
-    public void beFriendly() {
+    @Override public void beFriendly() {
         System.out.println("I am a friendly cat");
     }
     
-    @Override
-    public void play() {
+    @Override public void play() {
         System.out.println("I want to play play with a ball");
     }
 }

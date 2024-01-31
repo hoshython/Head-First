@@ -14,8 +14,8 @@ public class StreamTest {
         List<String> result = strings.stream().limit(4).collect(Collectors.toList());
         System.out.println(result);
         System.out.println(strings.stream().sorted().limit(4).collect(Collectors.toList()));
-        System.out.println(strings.stream().sorted((s1, s2) -> s1.compareToIgnoreCase(s2)).limit(4)
-                                  .collect(Collectors.toList()));
+        System.out.println(
+                strings.stream().sorted((s1, s2) -> s1.compareToIgnoreCase(s2)).limit(4).collect(Collectors.toList()));
         System.out.println(strings.stream().sorted((s1, s2) -> s1.compareToIgnoreCase(s2)).skip(2).limit(4)
                                   .collect(Collectors.toList()));
         System.out.println(strings.stream().collect(Collectors.joining(", ")));

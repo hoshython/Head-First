@@ -35,8 +35,7 @@ public class Song {
         this.timesPlayed = timesPlayed;
     }
     
-    @Override
-    public String toString() {
+    @Override public String toString() {
         return title + ", " + artist + ", " + genre;
     }
 }

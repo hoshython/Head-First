@@ -27,13 +27,11 @@ public class TestTree {
             this.title = title;
         }
         
-        @Override
-        public String toString() {
+        @Override public String toString() {
             return this.title;
         }
         
-        @Override
-        public int compareTo(Book other) {
+        @Override public int compareTo(Book other) {
             return this.title.compareTo(other.title);
         }
         

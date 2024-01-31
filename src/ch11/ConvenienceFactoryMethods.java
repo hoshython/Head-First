@@ -15,8 +15,8 @@ public class ConvenienceFactoryMethods {
         Map<String, Integer> scores = Map.of("Iman", 20, "Razi", 32, "Aziz", 46);
         System.out.println(scores);
         
-        Map<String, String> trucks = Map.ofEntries(Map.entry("Volvo", "FM"), Map.entry("Benz", "Axor"), Map.entry(
-                "Scania", "R410"));
+        Map<String, String> trucks = Map.ofEntries(
+                Map.entry("Volvo", "FM"), Map.entry("Benz", "Axor"), Map.entry("Scania", "R410"));
         System.out.println(trucks);
     }
 }

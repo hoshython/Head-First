@@ -24,8 +24,7 @@ public class SongV2 {
         this.bpm = bpm;
     }
     
-    @Override
-    public String toString() {
+    @Override public String toString() {
         return title;
     }
     

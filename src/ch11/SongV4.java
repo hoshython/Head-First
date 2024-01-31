@@ -11,20 +11,17 @@ public class SongV4 {
         this.bpm = bpm;
     }
     
-    @Override
-    public boolean equals(Object obj) {
+    @Override public boolean equals(Object obj) {
         SongV4 anotherSong = (SongV4) obj;
         return this.title.equals(anotherSong.getTitle());
     }
     
-    @Override
-    public int hashCode() {
+    @Override public int hashCode() {
         return this.title.hashCode();
         
     }
     
-    @Override
-    public String toString() {
+    @Override public String toString() {
         return title;
     }
     
