@@ -12,25 +12,25 @@ public class GameHelper {
     private static final int MAX_ATTEMPTS = 200;
     static final int HORIZONTAL_INCREMENT = 1;
     static final int VERTICAL_INCREMENT = 7;
-
+    
     private final int[] grid = new int[GRID_SIZE];
     private final Random random = new Random();
     private int startupCount = 0;
-
+    
     public String getUserInput(String prompt) {
         System.out.print(prompt + ": ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toLowerCase();
     }
-
+    
     public ArrayList<String> placeStartup(int startupSize) {
         int[] startupCoords = new int[startupSize];
         int attempts = 0;
         boolean success = false;
-
+        
         startupCount++;
         int increment = getIncrement();
-
+        
         while (!success && attempts++ < MAX_ATTEMPTS) {
             int location = random.nextInt(GRID_SIZE);
             for (int i = 0; i < startupCoords.length; i++) {
@@ -47,7 +47,7 @@ public class GameHelper {
         System.out.println("Placed at: " + alphaCells);
         return alphaCells;
     }
-
+    
     private ArrayList<String> convertCoordsToAlphaFormat(int[] startupCoords) {
         ArrayList<String> alphaCells = new ArrayList<>();
         for (int index : startupCoords) {
@@ -56,20 +56,20 @@ public class GameHelper {
         }
         return alphaCells;
     }
-
+    
     private String getAlphaCoordsFromIndex(int index) {
         int row = calcRowFromIndex(index);
         int column = index % GRID_LENGTH;
         String letter = ALPHABET.substring(column, column + 1);
         return letter + row;
     }
-
+    
     private void savePositionToGrid(int[] startupCoords) {
         for (int index : startupCoords) {
             grid[index] = 1;
         }
     }
-
+    
     private boolean coordsAvailable(int[] startupCoords) {
         for (int coord : startupCoords) {
             if (grid[coord] != 0) {
@@ -79,7 +79,7 @@ public class GameHelper {
         }
         return true;
     }
-
+    
     private boolean startupFits(int[] startupCoords, int increment) {
         int finalLocation = startupCoords[startupCoords.length - 1];
         if (increment == HORIZONTAL_INCREMENT) {
@@ -88,11 +88,11 @@ public class GameHelper {
             return finalLocation < GRID_SIZE;
         }
     }
-
+    
     private int calcRowFromIndex(int index) {
         return index / GRID_LENGTH;
     }
-
+    
     private int getIncrement() {
         if (startupCount % 2 == 0) {
             return HORIZONTAL_INCREMENT;

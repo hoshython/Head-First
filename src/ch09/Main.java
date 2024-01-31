@@ -5,7 +5,7 @@ public class Main {
         Duck duck = new Duck(42);
         Hippo h = new Hippo("Buffy");
         System.out.println(h.getName());
-
+        
         SonOfBoo son = new SonOfBoo();
     }
 }

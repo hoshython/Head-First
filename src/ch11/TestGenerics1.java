@@ -9,7 +9,7 @@ public class TestGenerics1 {
         List<Dog> dogs = List.of(new Dog(), new Dog());
         takeAnimals(dogs);
     }
-
+    
     //    public static void takeAnimals(List<? extends Animal> animals){
     public static <T extends Animal> void takeAnimals(List<T> animals) {
         for (Animal animal : animals) {
