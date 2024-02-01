@@ -10,7 +10,7 @@ public class StreamTest {
         //        Stream<String> limit = stream.limit(4); // 4 is the maximum number of element we want
         //        System.out.println(limit.count());
         //        System.out.println(limit.collect(Collectors.toList()));
-        
+
         List<String> result = strings.stream().limit(4).collect(Collectors.toList());
         System.out.println(result);
         System.out.println(strings.stream().sorted().limit(4).collect(Collectors.toList()));
