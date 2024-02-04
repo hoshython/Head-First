@@ -22,5 +22,6 @@ public class SimpleGui2 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         button.setText("I've been clicked!");
+        System.out.println(event);
     }
 }
