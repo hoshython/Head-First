@@ -5,12 +5,12 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class SimpleAnimation {
+public class SimpleAnimation1 {
     private int xPosition;
     private int yPosition;
 
     public static void main(String[] args) {
-        SimpleAnimation gui = new SimpleAnimation();
+        SimpleAnimation1 gui = new SimpleAnimation1();
         gui.go();
     }
 
@@ -28,6 +28,7 @@ public class SimpleAnimation {
             xPosition++;
             yPosition++;
             panel.repaint();
+            Toolkit.getDefaultToolkit().sync();
             try {
                 TimeUnit.MILLISECONDS.sleep(30);
 
