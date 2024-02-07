@@ -20,6 +20,7 @@ public class TextField1 {
         Font font1 = new Font("serif", Font.PLAIN, 14);
 
         textField = new JTextField( 20);
+        textField.requestFocus();
 
         JLabel label = new JLabel("Enter your name");
         label.setFont(font1);
