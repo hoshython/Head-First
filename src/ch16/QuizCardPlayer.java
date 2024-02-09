@@ -78,13 +78,12 @@ public class QuizCardPlayer {
     private void loadFile(File file) {
         cardList = new ArrayList<>();
         currentCardIndex = 0;
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+        try(BufferedReader reader =
+                    new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null){
                 makeCard(line);
             }
-            reader.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
