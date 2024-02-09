@@ -1,7 +1,12 @@
 package ch15;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import java.awt.BorderLayout;
 
 public class TextArea2 {
     private JPanel centerPanel;
