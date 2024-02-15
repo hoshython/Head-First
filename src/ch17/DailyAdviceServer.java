@@ -9,10 +9,13 @@ import java.nio.channels.SocketChannel;
 import java.util.Random;
 
 public class DailyAdviceServer {
-    final private String[] adviceList = {"Take smaller bites",
-            "Go for the tight jeans. No they do NOT make you look fat.", "One word: inappropriate",
+    final private String[] adviceList = {
+            "Take smaller bites",
+            "Go for the tight jeans. No they do NOT make you look fat.",
+            "One word: inappropriate",
             "Just for today, be honest. Tell your boss what you *really* think",
-            "You might want to rethink that haircut."};
+            "You might want to rethink that haircut."
+    };
     private final Random random = new Random();
 
     public void go() {
