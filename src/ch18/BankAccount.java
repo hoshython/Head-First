@@ -1,15 +1,22 @@
 package ch18;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class BankAccount {
-    private int balance = 100;
+    private final AtomicInteger balance = new AtomicInteger(100);
 
     public int getBalance() {
-        return balance;
+        return balance.get();
     }
-    public void spend(int amount){
-        balance = amount - balance;
-        if (balance < 0) {
-            System.out.println("Overdrawn!");
+    public void spend(String name, int amount){
+        int initialBalance = balance.get();
+        if (initialBalance >= amount) {
+            boolean success = balance.compareAndSet(initialBalance, initialBalance - amount);
+            if (!success) {
+                System.out.println("Sorry " + name + ", you haven't spent the money.");
+            }
+        } else {
+            System.out.println("Sorry, not enough for " + name);
         }
     }
 }

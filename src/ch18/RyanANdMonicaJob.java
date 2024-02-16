@@ -3,22 +3,26 @@ package ch18;
 public class RyanANdMonicaJob implements Runnable {
     private final String name;
     private final BankAccount account;
-    private final int amountToSpend;
-    public RyanANdMonicaJob(String name, BankAccount account, int amountToSpend) {
+    private final int amount;
+    public RyanANdMonicaJob(String name, BankAccount account, int amount) {
         this.name = name;
         this.account = account;
-        this.amountToSpend = amountToSpend;
+        this.amount = amount;
     }
     public void run() {
-        goShopping(amountToSpend);
+        goShopping(name, amount);
     }
-    private void goShopping(int amount) {
-        if (account.getBalance() >= amount) {
-            System.out.println(name + " is about to spend");
-            account.spend(amount);
-            System.out.println(name + " finishes spending");
-        } else {
-            System.out.println("Sorry, not enough for " + name);
+    private void goShopping(String name, int amount) {
+        synchronized (account) {
+            if (account.getBalance() >= amount) {
+                System.out.println(name + " is about to spend $" + amount);
+                account.spend(name, amount);
+                System.out.println(name + " finishes spending $" + amount);
+                System.out.println("Current balance is: $" + account.getBalance());
+            } else {
+                System.out.println("Sorry, not enough for " + name);
+                System.out.println("Current balance is: $" + account.getBalance());
+            }
         }
     }
 }
